@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kelas - Kenangan & Anggota</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ELEMEN BACKGROUND GAMBAR -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <!-- Gambar Background -->
+    <img src="assets/images/background2.jpeg" 
+         alt="Background" 
+         class="w-full h-full object-cover opacity-100 dark:opacity-50 filter blur-[1px]">
+
+    <!-- Lapisan Gradient Overlay (Agar teks tetap terbaca) -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-slate-50/60 to-slate-50 dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900"></div>
+</div>
+
+<body
+    class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-['Inter'] transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav
+        class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-indigo-600 text-white p-2 rounded-xl shadow-lg shadow-indigo-500/30">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <span
+                        class="font-bold text-xl tracking-tight bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">XI ERPEEL BE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#kebersamaan"
+                        class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Kebersamaan</a>
+                    <a href="#anggota"
+                        class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Anggota
+                        Kelas</a>
+                    <a href="#pesan"
+                        class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Buku Tamu</a>
+                    <button id="themeToggle"
+                        class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <button id="themeToggleMobile" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800">
+                        <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu"
+            class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <a href="#kebersamaan" class="block py-2 font-medium">Kebersamaan</a>
+            <a href="#anggota" class="block py-2 font-medium">Anggota Kelas</a>
+            <a href="#pesan" class="block py-2 font-medium">Buku Tamu</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header
+        class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-indigo-50/50 via-transparent to-transparent dark:from-indigo-950/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span
+                class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-6 border border-indigo-100 dark:border-indigo-900 shadow-sm">
+                <i class="fa-solid fa-sparkles"></i> Angkatan 2025-2028
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                Selamat Datang di Website <span
+                    class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">XI ERPEEL BE</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
+                Tempat mengabadikan setiap senyuman, tawa, perjuangan, dan momen kebersamaan yang takkan pernah
+                terlupakan selama masa sekolah di SMK N 3 Metro ini.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#kebersamaan"
+                    class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg shadow-indigo-500/25 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-images mr-2"></i> Lihat Foto Kebersamaan
+                </a>
+                <a href="#anggota"
+                    class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 font-medium transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-users mr-2 text-indigo-500"></i> Kenal Anggota Kelas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- KEBERSAMAAN SECTION -->
+    <section id="kebersamaan" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold tracking-tight mb-4">Galeri Kebersamaan</h2>
+            <p class="text-slate-600 dark:text-slate-400">Kumpulan momen berharga kebersamaan kami baik di dalam maupun
+                di luar kelas.</p>
+        </div>
+
+        <!-- Filter Tombol -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10" id="galleryFilters">
+            <button
+                class="filter-btn active px-4 py-2 rounded-xl text-sm font-medium bg-indigo-600 text-white shadow-sm transition"
+                data-filter="all">Semua Momen</button>
+            <button
+                class="filter-btn px-4 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+                data-filter="kelas">Di Dalam Kelas</button>
+            <button
+                class="filter-btn px-4 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+                data-filter="trip">Study Tour & Trip</button>
+            <button
+                class="filter-btn px-4 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+                data-filter="pensi">Pensi & Lomba</button>
+        </div>
+
+        <!-- Grid Foto Kebersamaan -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+            <!-- Item 1 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="kelas"
+                onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80', 'Suasana Belajar & Diskusi', 'Diskusi kelompok seru jam pelajaran Biologi.')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas2.jpeg" alt="Kelas"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Di
+                        Dalam Kelas</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">Jurusan</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Memori ERPEEL</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="trip"
+                onclick="openLightbox('https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80', 'Study Tour ke Pantai', 'Refreshing bersama setelah ujian semester selesai.')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas1.jpeg" alt="Trip"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span
+                        class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Event</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">Pentas Seni Teater</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">pentas Teater Akhir Tahun </p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="pensi"
+                onclick="openLightbox('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80', 'Pentas Seni Sekolah', 'Penampilan drama musikal kelas yang memukau.')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas3.jpeg" alt="Pensi"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span
+                        class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Acara
+                        di Luar Sekolah</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">KARBAKAR</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Bakar-Bakar Bersama Teman Satu Kelas</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="kelas"
+                onclick="openLightbox('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80', 'Perayaan Ulang Tahun Wali Kelas', 'Kejutan kecil penuh haru dan kue tart coklat.')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas4.jpeg"
+                        alt="Kelas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">MEMORIAL</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">Sertifikat </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Sertifikat with AGATE
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="trip"
+                onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80', 'Camping Gunung', 'Menikmati malam kebersamaan di bawah bintang.')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas5.jpeg"
+                        alt="Trip" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span
+                        class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Buka Bersama</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">Buka Bersama Stu Kelas</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Menikmati malam kebersamaan di bawah cahaya rembulan Ramadhan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 cursor-pointer"
+                data-category="pensi"
+                onclick="openLightbox('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80', 'Juara Umum Lomba Antar Kelas', 'Piala bergilir berhasil dibawa pulang ke kelas kita!')">
+                <div class="aspect-video overflow-hidden">
+                    <img src="assets/images/web kelas 6.jpeg"
+                        alt="Pensi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-5">
+                    <span
+                        class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">With mapren</span>
+                    <h3 class="font-bold text-lg mt-1 mb-1">-----</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">-----</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PEMBATAS / GARIS SECTION -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <hr class="border-slate-200 dark:border-slate-800">
+    </div>
+
+    <!-- ANGGOTA KELAS SECTION -->
+    <section id="anggota" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold tracking-tight mb-4">Anggota Kelas</h2>
+            <p class="text-slate-600 dark:text-slate-400">Kenalan dengan struktur pengurus dan seluruh anggota keluarga
+                besar kelas kita.</p>
+        </div>
+
+        <!-- Search & Filter Anggota -->
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
+            <div class="relative w-full sm:w-80">
+                <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="searchMember" placeholder="Cari nama anggota..."
+                    class="w-full pl-11 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0" id="memberRoleFilter">
+                <button
+                    class="member-filter-btn active px-4 py-2 rounded-xl text-sm font-medium bg-indigo-600 text-white shrink-0"
+                    data-role="all">Semua</button>
+                <button
+                    class="member-filter-btn px-4 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0"
+                    data-role="pengurus">Perangkat Kelas</button>
+                <button
+                    class="member-filter-btn px-4 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0"
+                    data-role="anggota">Anggota</button>
+            </div>
+        </div>
+
+        <!-- Grid Anggota Kelas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="memberGrid">
+            <!-- Card 1 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Daffa Rafif Abhirahma" data-role="pengurus">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota2.jpeg"
+                        alt="Daffa Rafif Abhirahma"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Daffa Rafif Abhirahma</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Admin</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Admin yang amanah dan terpercaya."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Anta Jagu Berlian Jaya" data-role="pengurus">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota1.jpeg"
+                        alt="Anta Jagu Berlian Jaya"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Anta Jagu Berlian Jaya</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member yang patuh dengan admin."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Brilliant Muhammad Arga" data-role="pengurus">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota4.jpeg"
+                        alt="Brilliant Muhammad Arga"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Brilliant Muhammad Arga</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member soft spoken(tapi boong)."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Devan Aldiano" data-role="pengurus">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota3.jpeg"
+                        alt="Devan Aldiano"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Devan Aldiano</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member cogan chandra."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Ilham Syalafi" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota11.jpeg"
+                        alt="Ilham Syalafi"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Ilham Syalafi</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member fury dan kekar."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Hildhan Alkautsar" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota5.jpeg"
+                        alt="Hildhan Alkautsar"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Hildhan Alkautsar</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Ceo Bank Eka menyamar menjadi penjual gas elpiji."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Irfan Syachrul Ramadhan" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota6.jpeg"
+                        alt="Irfan Syachrul Ramadhan"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Irfan Syachrul Ramadhan</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"No Komen."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Jessen Alfa Ridho" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota7.jpeg"
+                        alt="Jessen Alfa Ridho"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Jessen Alfa Ridho</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Cogan low Profile."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="M. Atha Luthfi Kausar" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota8.jpeg"
+                        alt="M. Atha Luthfi Kausar"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">M. Atha Luthfi Kausar</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member Manusia Prasejarah."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Rangga Aldiansyah" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota10.jpeg"
+                        alt="Rangga Aldiansyah"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Rangga Aldiansyah</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Satu-satunya member mbelong."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="Nadil Ulum Annafis" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota9.jpeg"
+                        alt="Nadil Ulum Annafis"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">Nadil Ulum Annafis</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Member iq diatas Reza Arap."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="member-card bg-white dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition group"
+                data-name="M. Rehan Alfahri" data-role="anggota">
+                <div
+                    class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-indigo-500/30 group-hover:border-indigo-500 transition">
+                    <img src="assets/images/anggota12.jpeg"
+                        alt="M. Rehan Alfahri"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="font-bold text-lg mb-1">M. Rehan Alfahris</h3>
+                <span
+                    class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-3">Member</span>
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mb-4">"Wong Have Wong Have."</p>
+                <div class="flex justify-center space-x-3 text-slate-400">
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUKU TAMU / PESAN SECTION -->
+    <section id="pesan"
+        class="py-20 bg-indigo-50/50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Pesan & Kesan Kenangan</h2>
+                <p class="text-slate-600 dark:text-slate-400">Tinggalkan pesan, kesan, atau motivasi untuk teman-teman
+                    sekelas.</p>
+            </div>
+
+            <!-- Form Pesan -->
+            <form id="guestbookForm"
+                class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/60 dark:border-slate-700 mb-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider mb-2">Nama Pengirim</label>
+                        <input type="text" id="guestName" required placeholder="Nama Anda..."
+                            class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider mb-2">Sebagai</label>
+                        <select id="guestRole"
+                            class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="Anggota Kelas">Anggota Kelas</option>
+                            <option value="Wali Kelas / Guru">Wali Kelas / Guru</option>
+                            <option value="Alumni / Pengunjung">Alumni / Pengunjung</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold uppercase tracking-wider mb-2">Pesan Kenangan</label>
+                    <textarea id="guestMessage" rows="4" required placeholder="Tuliskan pesanmu di sini..."
+                        class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg shadow-indigo-500/20 transition">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Pesan
+                </button>
+            </form>
+
+            <!-- Daftar Pesan -->
+            <div class="space-y-4" id="messagesContainer">
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-bold">Ina Febriana S.Pd</h4>
+                            <span class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">Wali Kelas /
+                                Guru</span>
+                        </div>
+                        <span class="text-xs text-slate-400">Hari ini</span>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Tetaplah menjadi member yang setia dan bertanggung jawab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="bg-indigo-600 text-white p-2 rounded-xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight">XI RPL B</span>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Dibuat dengan ❤️ oleh Kelas XI RPL B • Semua Hak
+                Cipta Dilindungi.</p>
+            <div class="flex justify-center space-x-6 text-slate-400">
+                <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-tiktok text-xl"></i></a>
+                <a href="#" class="hover:text-indigo-600 transition"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox"
+        class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div
+            class="relative max-w-4xl w-full bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
+            <button onclick="closeLightbox()"
+                class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="aspect-video bg-black flex items-center justify-center">
+                <img id="lightboxImg" src="" alt="" class="max-h-full object-contain">
+            </div>
+            <div class="p-6">
+                <h3 id="lightboxTitle" class="font-bold text-xl mb-2"></h3>
+                <p id="lightboxDesc" class="text-slate-600 dark:text-slate-400 text-sm"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

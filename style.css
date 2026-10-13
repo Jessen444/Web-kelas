@@ -1,0 +1,24 @@
+/* Custom CSS tambahan jika diperlukan di luar kelas utilitas Tailwind */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transisi halus untuk galeri dan kartu anggota */
+.gallery-item, .member-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Scrollbar kustom opsional */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
